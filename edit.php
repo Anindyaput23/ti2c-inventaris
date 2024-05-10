@@ -20,14 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $warna = $_POST["warna"];
     $jumlah = $_POST["jumlah"];
 
-    $sql_update = "UPDATE printer SET no = ?, nama = ?, warna = ?, jumlah = ? WHERE no = ?";
+    $sql_update = "UPDATE data_barang SET no = ?, nama = ?, warna = ?, jumlah = ? WHERE no = ?";
     $stmt = $connect->prepare($sql_update);
     $stmt->bind_param("ssssi", $no, $nama, $warna, $jumlah, $id);
 
     if ($stmt->execute()) {
         $update_message = "Data berhasil diperbarui.";
     } else {
-        $update_message = "Gagal memperbarui data.";
+        $update_message = "Data Gagal memperbarui data.";
     }
 }
 
@@ -39,7 +39,7 @@ $connect->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Data Barang</title>
+    <title>Halama Edit Barang</title>
     <style>
         body {
             margin: 0;
@@ -137,7 +137,7 @@ $connect->close();
     </style>
 </head>
 <body>
-    <?php include "layout/header.html"; ?>
+    <?php include "header.html"; ?>
 
     <div class="container">
         <h3>UBAH DATA BARANG</h3>

@@ -23,22 +23,23 @@ $result = $connect->query($sql);
 
 <head>
     <meta charset="UTF-8">
-    <title>Data Barang</title>
+    <title>DAFTAR BARANG</title>
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/pen.css' rel='stylesheet'>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-image: url('background.jpg');
+            background-image: url('background1.jpg');
             background-size: cover;
             font-family: Arial, sans-serif;
         }
 
         table {
-            width: 90%;
+            width: 70%;
             position: center;
             border-collapse: collapse;
             margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.5);
         }
 
         tr {
@@ -48,7 +49,7 @@ $result = $connect->query($sql);
         table,
         th,
         td {
-            border: 1px solid #ececec;
+            border: 2px solid #ececec;
         }
 
         h2 {
@@ -56,7 +57,7 @@ $result = $connect->query($sql);
         }
 
         th {
-            background-color: rgb(34, 43, 78, 0.7);
+            background: rgb(112,107,193);
             font-weight: bold;
             text-align: center;
         }
@@ -77,7 +78,7 @@ $result = $connect->query($sql);
             text-align: center;
             text-decoration: none;
             color: white;
-            background-color: #007bff;
+            background-color: #ad13e4;
             border-radius: 5px;
             transition: background-color 0.3s;
             margin-top: 15px;
@@ -85,7 +86,7 @@ $result = $connect->query($sql);
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #ad13e4;
         }
 
         .center {
@@ -171,7 +172,7 @@ $result = $connect->query($sql);
     <?php include "header.html"; ?>
 
     <div class="center">
-        <h2>Data Barang</h2>
+        <h2>DAFTAR BARANG</h2>
 
         <?php if (isset($delete_message)): ?>
             <p style="color:#ececec;"><?= $delete_message ?></p>
@@ -181,7 +182,7 @@ $result = $connect->query($sql);
             <table>
                 <tr>
                     <th>NO</th>
-                    <th>Nama Merk Barang</th>
+                    <th>Nama Barang</th>
                     <th>Warna</th>
                     <th>Jumlah</th>
                     <th>Aksi</th>

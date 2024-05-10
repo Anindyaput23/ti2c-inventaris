@@ -21,7 +21,7 @@ if (isset($_POST["register"])) {
             $register_message = "Barang Gagal Ditambahkan.";
         }
     } catch (mysqli_sql_exception $e) {
-        $register_message = "Terjadi kesalahan saat menyimpan data: " . $e->getMessage();
+        $register_message = "Proses Gagal! Coba Ulangi Lagi!: " . $e->getMessage();
     }
 
     $connect->close();
@@ -33,20 +33,20 @@ if (isset($_POST["register"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar</title>
+    <title>Registrasi Barang</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-image: url('background.jpg'); 
+            background-image: url('background1.jpg'); 
             background-size: cover;
             font-family: Arial, sans-serif;
         }
 
         .container {
-            max-width: 500px;
+            max-width: 550px;
             margin: 30px auto;
-            padding: 15px;
+            padding: 20px;
             background-color: rgb(195,192,192, 0.7);
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -136,7 +136,7 @@ if (isset($_POST["register"])) {
     <?php include "header.html"; ?>
 
     <div class="container">
-        <h3>MASUKKAN DATA BARANG</h3>
+        <h3>Masukkan Data Barang</h3>
 
         <div class="register-message">
             <?= $register_message ?>
